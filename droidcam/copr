@@ -1,0 +1,1 @@
+https://copr.fedorainfracloud.org/coprs/meeuw/droidcam/repo/fedora-$(rpm -E %fedora)/meeuw-droidcam-fedora-$(rpm -E %fedora).repo
