@@ -1,0 +1,11 @@
+[Unit]
+Description=builds and injects keyboard backlight driver
+After=multi-user.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/bash /usr/local/bin/tuxedo-loader
+
+[Install]
+WantedBy=multi-user.target

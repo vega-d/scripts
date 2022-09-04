@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+cd /home/vega/software/tuxedo-keyboard/ || exit
+make clean
+make
+
+insmod /home/vega/software/tuxedo-keyboard/src/tuxedo_keyboard.ko
+insmod /home/vega/software/tuxedo-keyboard/src/clevo_wmi.ko
+insmod /home/vega/software/tuxedo-keyboard/src/clevo_acpi.ko
