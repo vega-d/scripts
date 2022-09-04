@@ -1,0 +1,11 @@
+[Unit]
+Description=starts keyboard backlight driver
+After=multi-user.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/bash /usr/local/bin/tailscale-loader
+
+[Install]
+WantedBy=multi-user.target
