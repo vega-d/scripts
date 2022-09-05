@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # this script is a part of Vega's install automation project, do not use by itself.
 
+ bash ./install\ all\ coprs.sh
+
 PACKAGE_LIST_FOLDERS=$(ls -d ./*/)
 START_DIR=$(pwd)
 PACKAGE_LIST=()
