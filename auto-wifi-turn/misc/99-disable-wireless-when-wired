@@ -1,0 +1,21 @@
+#!/bin/sh
+myname=${0##*/}
+log() { logger -p user.info -t "${myname}[$$]" "$*"; }
+IFACE=$1
+ACTION=$2
+case ${IFACE} in
+    eth*|usb*|en*)
+        case ${ACTION} in
+            up) # when plugging ethernet cable
+                log "disabling wifi because wired connection is available"
+                # list active connections
+                nmcli radio wifi off
+                ;;
+            down) # when unplugging ethernet cable
+                log "re-enabling wifi since wired is not available"
+                # auto-choose wifi to reconnect
+                nmcli radio wifi on
+                ;;
+        esac
+        ;;
+esac
