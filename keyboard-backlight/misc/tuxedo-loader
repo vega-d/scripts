@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
 cd /home/vega/software/tuxedo-keyboard/ || exit
+
+if [[ $(uname -r) != $(cat /etc/aki) ]]
+then
+echo "Kernel Version Change detected, recompiling!"
+rm /etc/aki
+uname -r > /etc/aki
 make clean
 make
+fi
 
 insmod /home/vega/software/tuxedo-keyboard/src/tuxedo_keyboard.ko
 insmod /home/vega/software/tuxedo-keyboard/src/clevo_wmi.ko
